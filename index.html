@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Balai Desa Bangsalsari</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5faf7;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        header {
+            background: white;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: #087a3e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+        }
+
+        .logo h2 {
+            font-size: 21px;
+            color: #111;
+        }
+
+        .logo p {
+            color: #087a3e;
+            margin-top: 3px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            margin-left: 30px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #087a3e;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 520px;
+            background:
+                linear-gradient(rgba(0,70,35,0.55), rgba(0,50,25,0.65)),
+                url("ff.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        /* LAYANAN */
+        .layanan {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .layanan h2 {
+            font-size: 34px;
+            color: #075c30;
+            margin-bottom: 15px;
+        }
+
+        .layanan > p {
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        /* CARD */
+        .card {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 50px 35px;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            background: #e5f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: #075c30;
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            background: #0a8f45;
+            color: white;
+            text-decoration: none;
+            padding: 17px 45px;
+            border-radius: 10px;
+            font-size: 19px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #056b32;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #07572e;
+            color: white;
+            padding: 45px 8%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-box {
+            flex: 1;
+        }
+
+        .footer-box h3 {
+            margin-bottom: 12px;
+        }
+
+        .footer-box p {
+            line-height: 1.7;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* RESPONSIVE HP */
+        @media (max-width: 768px) {
+
+            header {
+                height: auto;
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 450px;
+                padding: 40px 25px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .layanan h2 {
+                font-size: 27px;
+            }
+
+            .card {
+                padding: 35px 20px;
+            }
+
+            .card h3 {
+                font-size: 23px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🏛️
+            </div>
+
+            <div>
+                <h2>BALAI DESA BANGSALSARI</h2>
+                <p>Kec. Bangsalsari, Kab. Jember</p>
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#layanan">Layanan</a>
+           
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+
+        <div class="hero-content">
+
+            <h1>
+                BALAI DESA<br>
+                BANGSALSARI
+            </h1>
+
+            <h2>
+                Layanan Digital Masyarakat
+            </h2>
+
+            <p>
+                Kami hadir untuk memberikan pelayanan
+                yang mudah, cepat, transparan, dan
+                terpercaya bagi masyarakat.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LAYANAN -->
+    <section class="layanan" id="layanan">
+
+        <h2>
+            LAYANAN DIGITAL MASYARAKAT
+        </h2>
+
+        <p>
+            Pilih layanan di bawah ini untuk mengakses
+            layanan digital Balai Desa Bangsalsari.
+        </p>
+
+
+        <!-- CARD PENGADUAN -->
+        <div class="card">
+
+            <div class="icon">
+                📝
+            </div>
+
+            <h3>
+                FORM PENGADUAN MASYARAKAT
+            </h3>
+
+            <p>
+                Sampaikan pengaduan, keluhan, atau laporan
+                terkait pelayanan dan kondisi di lingkungan desa.
+            </p>
+
+            <!-- LINK GOOGLE FORM -->
+            <a
+                href="https://s.id/balai-desa"
+                target="_blank"
+                class="btn">
+                📝 BUKA FORMULIR
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="kontak">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h3>📍 Balai Desa Bangsalsari</h3>
+
+                <p>
+                    Kec. Bangsalsari, Kab. Jember<br>
+                    Jawa Timur
+                </p>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>🕐 Jam Pelayanan</h3>
+
+                <p>
+                    Senin – Jumat<br>
+                    08.00 – 16.00 WIB
+                </p>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>📞 Kontak</h3>
+
+                <p>
+                    Hubungi Balai Desa Bangsalsari
+                    untuk informasi pelayanan.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Balai Desa Bangsalsari.
+            All rights reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
