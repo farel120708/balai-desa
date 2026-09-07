@@ -14,19 +14,24 @@
             font-family: Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #f5faf7;
             color: #222;
         }
 
-        /* NAVBAR */
+        /* ================= NAVBAR ================= */
+
         header {
             background: white;
-            height: 80px;
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 7%;
+            padding: 15px 7%;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
@@ -61,7 +66,7 @@
         nav a {
             text-decoration: none;
             color: #222;
-            margin-left: 30px;
+            margin-left: 25px;
             font-size: 16px;
         }
 
@@ -69,11 +74,17 @@
             color: #087a3e;
         }
 
-        /* HERO */
+
+        /* ================= HERO ================= */
+
         .hero {
             min-height: 520px;
+
             background:
-                linear-gradient(rgba(0,70,35,0.55), rgba(0,50,25,0.65)),
+                linear-gradient(
+                    rgba(0,70,35,0.55),
+                    rgba(0,50,25,0.65)
+                ),
                 url("ff.jpg");
 
             background-size: cover;
@@ -81,7 +92,9 @@
 
             display: flex;
             align-items: center;
+
             padding: 60px 8%;
+
             color: white;
         }
 
@@ -105,9 +118,11 @@
             line-height: 1.7;
         }
 
-        /* LAYANAN */
+
+        /* ================= LAYANAN ================= */
+
         .layanan {
-            padding: 70px 20px;
+            padding: 70px 6%;
             text-align: center;
         }
 
@@ -119,72 +134,139 @@
 
         .layanan > p {
             font-size: 17px;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
-        /* CARD */
+
+        /* ================= GRID CARD ================= */
+
+        .layanan-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================= CARD ================= */
+
         .card {
             background: white;
-            max-width: 700px;
-            margin: auto;
-            padding: 50px 35px;
-            border-radius: 25px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+
+            padding: 40px 25px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.10);
+
+            transition: 0.3s;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.15);
+        }
+
+
+        /* ================= ICON ================= */
 
         .icon {
             width: 100px;
             height: 100px;
-            margin: auto;
+
+            margin-bottom: 25px;
+
             border-radius: 50%;
+
             background: #e5f5e9;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 55px;
-            margin-bottom: 25px;
+
+            font-size: 50px;
         }
+
+
+        /* ================= CARD TEXT ================= */
 
         .card h3 {
             color: #075c30;
-            font-size: 27px;
+
+            font-size: 22px;
+
+            line-height: 1.4;
+
             margin-bottom: 15px;
         }
 
         .card p {
-            font-size: 17px;
+            font-size: 16px;
+
             line-height: 1.6;
-            margin-bottom: 30px;
+
+            margin-bottom: 25px;
+
+            min-height: 80px;
         }
 
-        /* BUTTON */
+
+        /* ================= BUTTON ================= */
+
         .btn {
             display: inline-block;
+
+            width: 100%;
+
             background: #0a8f45;
+
             color: white;
+
             text-decoration: none;
-            padding: 17px 45px;
+
+            padding: 15px 20px;
+
             border-radius: 10px;
-            font-size: 19px;
+
+            font-size: 17px;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .btn:hover {
             background: #056b32;
+
             transform: translateY(-2px);
         }
 
-        /* FOOTER */
+
+        /* ================= FOOTER ================= */
+
         footer {
             background: #07572e;
+
             color: white;
+
             padding: 45px 8%;
         }
 
         .footer-container {
             display: flex;
+
             justify-content: space-between;
+
             gap: 30px;
         }
 
@@ -202,28 +284,46 @@
 
         .copyright {
             text-align: center;
+
             margin-top: 35px;
+
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+
+            border-top:
+                1px solid rgba(255,255,255,0.2);
         }
 
-        /* RESPONSIVE HP */
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .layanan-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
         @media (max-width: 768px) {
 
             header {
-                height: auto;
-                padding: 15px 20px;
                 flex-direction: column;
+
                 gap: 15px;
+
+                padding: 15px 20px;
             }
 
             nav a {
                 margin: 0 7px;
+
                 font-size: 14px;
             }
 
             .hero {
                 min-height: 450px;
+
                 padding: 40px 25px;
             }
 
@@ -239,28 +339,34 @@
                 font-size: 16px;
             }
 
+            .layanan {
+                padding: 50px 20px;
+            }
+
             .layanan h2 {
                 font-size: 27px;
             }
 
-            .card {
-                padding: 35px 20px;
-            }
-
-            .card h3 {
-                font-size: 23px;
+            .layanan-container {
+                grid-template-columns: 1fr;
             }
 
             .footer-container {
                 flex-direction: column;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVBAR -->
+
+    <!-- ================= NAVBAR ================= -->
+
     <header>
 
         <div class="logo">
@@ -270,24 +376,50 @@
             </div>
 
             <div>
-                <h2>BALAI DESA BANGSALSARI</h2>
-                <p>Kec. Bangsalsari, Kab. Jember</p>
+
+                <h2>
+                    BALAI DESA BANGSALSARI
+                </h2>
+
+                <p>
+                    Kec. Bangsalsari, Kab. Jember
+                </p>
+
             </div>
 
         </div>
 
+
         <nav>
-            <a href="#beranda">Beranda</a>
-            <a href="#layanan">Layanan</a>
-           
-            <a href="#kontak">Kontak</a>
+
+            <a href="#beranda">
+                Beranda
+            </a>
+
+            <a href="#layanan">
+                Layanan
+            </a>
+
+            <a href="#informasi">
+                Informasi
+            </a>
+
+            <a href="#kontak">
+                Kontak
+            </a>
+
         </nav>
 
     </header>
 
 
-    <!-- HERO -->
-    <section class="hero" id="beranda">
+
+    <!-- ================= HERO ================= -->
+
+    <section
+        class="hero"
+        id="beranda"
+    >
 
         <div class="hero-content">
 
@@ -311,87 +443,181 @@
     </section>
 
 
-    <!-- LAYANAN -->
-    <section class="layanan" id="layanan">
+
+    <!-- ================= LAYANAN ================= -->
+
+    <section
+        class="layanan"
+        id="layanan"
+    >
 
         <h2>
             LAYANAN DIGITAL MASYARAKAT
         </h2>
 
         <p>
-            Pilih layanan di bawah ini untuk mengakses
-            layanan digital Balai Desa Bangsalsari.
+            Silakan pilih layanan yang ingin digunakan.
         </p>
 
 
-        <!-- CARD PENGADUAN -->
-        <div class="card">
 
-            <div class="icon">
-                📝
+        <div class="layanan-container">
+
+
+            <!-- ================================================= -->
+            <!-- 1. PENGADUAN MASYARAKAT -->
+            <!-- ================================================= -->
+
+            <div class="card">
+
+                <div class="icon">
+                    📝
+                </div>
+
+                <h3>
+                    FORM PENGADUAN MASYARAKAT
+                </h3>
+
+                <p>
+                    Sampaikan pengaduan, keluhan,
+                    atau laporan terkait pelayanan
+                    dan kondisi di lingkungan desa.
+                </p>
+
+                <a
+                    href="https://s.id/balai-desa"
+                    target="_blank"
+                    class="btn"
+                >
+                    📝 BUKA FORMULIR
+                </a>
+
             </div>
 
-            <h3>
-                FORM PENGADUAN MASYARAKAT
-            </h3>
 
-            <p>
-                Sampaikan pengaduan, keluhan, atau laporan
-                terkait pelayanan dan kondisi di lingkungan desa.
-            </p>
 
-            <!-- LINK GOOGLE FORM -->
-            <a
-                href="https://s.id/balai-desa"
-                target="_blank"
-                class="btn">
-                📝 BUKA FORMULIR
-            </a>
+            <!-- ================================================= -->
+            <!-- 2. SURAT DOMISILI -->
+            <!-- ================================================= -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🏠
+                </div>
+
+                <h3>
+                    SURAT KETERANGAN DOMISILI
+                </h3>
+
+                <p>
+                    Ajukan permohonan surat keterangan
+                    domisili secara online melalui
+                    formulir digital.
+                </p>
+
+                <a
+                    href="https://forms.gle/HZ82YhXZX24QMCQ96"
+                    target="_blank"
+                    class="btn"
+                >
+                    🏠 BUKA FORMULIR
+                </a>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- 3. SURAT PENGANTAR KTP & KK -->
+            <!-- ================================================= -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🪪
+                </div>
+
+                <h3>
+                    SURAT PENGANTAR KTP & KK
+                </h3>
+
+                <p>
+                    Ajukan surat pengantar KTP dan KK
+                    dengan mudah melalui layanan
+                    digital Balai Desa.
+                </p>
+
+                <a
+                    href="https://forms.gle/WwBe45f4JGq1xYUV8"
+                    target="_blank"
+                    class="btn"
+                >
+                    🪪 BUKA FORMULIR
+                </a>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- FOOTER -->
+
+    <!-- ================= FOOTER ================= -->
+
     <footer id="kontak">
 
         <div class="footer-container">
 
+
             <div class="footer-box">
 
-                <h3>📍 Balai Desa Bangsalsari</h3>
+                <h3>
+                    📍 Balai Desa Bangsalsari
+                </h3>
 
                 <p>
-                    Kec. Bangsalsari, Kab. Jember<br>
+                    Kec. Bangsalsari, Kab. Jember
+                    <br>
                     Jawa Timur
                 </p>
 
             </div>
 
 
+
             <div class="footer-box">
 
-                <h3>🕐 Jam Pelayanan</h3>
+                <h3>
+                    🕐 Jam Pelayanan
+                </h3>
 
                 <p>
-                    Senin – Jumat<br>
+                    Senin – Jumat
+                    <br>
                     08.00 – 16.00 WIB
                 </p>
 
             </div>
 
 
+
             <div class="footer-box">
 
-                <h3>📞 Kontak</h3>
+                <h3>
+                    📞 Kontak
+                </h3>
 
                 <p>
-                    Hubungi Balai Desa Bangsalsari
-                    untuk informasi pelayanan.
+                    Balai Desa Bangsalsari
+                    <br>
+                    Pelayanan Masyarakat
                 </p>
 
             </div>
+
 
         </div>
 
@@ -404,6 +630,7 @@
         </div>
 
     </footer>
+
 
 </body>
 </html>
